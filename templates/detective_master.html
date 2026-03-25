@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вы загадали секрет</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="theme-switch" onclick="toggleTheme()">🌓 Тема</div>
+    <div class="container">
+        <div class="card">
+            <h2>Вы загадали: {{ secret }}</h2>
+            <p>Задано вопросов: {{ questions_asked }}</p>
+            <h3>Вопросы:</h3>
+            <ul>
+                {% for q in asked %}
+                    <li>{{ q }}</li>
+                {% endfor %}
+            </ul>
+            <p>Ожидайте, пока партнёр угадает.</p>
+            <a href="/lobby" class="btn">Вернуться в лобби</a>
+        </div>
+    </div>
+    <div class="toast-container" id="toast-container"></div>
+    <script>
+        // стандартный код
+    </script>
+</body>
+</html>

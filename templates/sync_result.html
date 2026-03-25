@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Результаты Синхрона</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="theme-switch" onclick="toggleTheme()">🌓 Тема</div>
+    <div class="container">
+        <div class="card">
+            <h2>Результаты Синхрона</h2>
+            <p>Совпало ответов: {{ matches }} из {{ total }}</p>
+            <div style="margin: 1rem 0;">
+                {% for i in range(total) %}
+                    <div style="border-bottom: 1px solid var(--border); padding: 0.5rem 0;">
+                        <strong>{{ questions[i] }}</strong><br>
+                        {{ player1 }}: {{ answers1[i] }}<br>
+                        {{ player2 }}: {{ answers2[i] }}
+                    </div>
+                {% endfor %}
+            </div>
+            <a href="/lobby" class="btn">Вернуться в лобби</a>
+        </div>
+    </div>
+    <div class="toast-container" id="toast-container"></div>
+    <script>
+        // стандартный код темы и тостов
+        // (повторять не буду, он везде одинаков)
+    </script>
+</body>
+</html>

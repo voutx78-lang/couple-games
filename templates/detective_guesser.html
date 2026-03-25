@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Угадай секрет</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="theme-switch" onclick="toggleTheme()">🌓 Тема</div>
+    <div class="container">
+        <div class="card">
+            <h2>Угадай секрет</h2>
+            <p>Задавайте вопросы, на которые можно ответить «да» или «нет».</p>
+            <p>Использовано вопросов: {{ questions_asked }} / 10</p>
+            <form method="post" style="margin-bottom: 1rem;">
+                <input type="text" name="question" placeholder="Ваш вопрос">
+                <button type="submit" class="btn">Задать вопрос</button>
+            </form>
+            <form method="post">
+                <input type="text" name="guess" placeholder="Попробуйте угадать">
+                <button type="submit" class="btn">Угадать</button>
+            </form>
+            <h3>История вопросов:</h3>
+            <ul>
+                {% for q in asked %}
+                    <li>{{ q }}</li>
+                {% endfor %}
+            </ul>
+            <a href="/lobby" class="btn">Вернуться в лобби</a>
+        </div>
+    </div>
+    <div class="toast-container" id="toast-container"></div>
+    <script>
+        // стандартный код
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Голосование</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="theme-switch" onclick="toggleTheme()">🌓 Тема</div>
+    <div class="container">
+        <div class="card">
+            <h2>Голосование – раунд {{ round_num }}</h2>
+            <p>Какой вариант вам нравится больше?</p>
+            <form method="post">
+                {% for player, answer in answers.items() %}
+                    <div style="margin: 1rem 0;">
+                        <label>
+                            <input type="radio" name="vote" value="{{ player }}" required>
+                            {{ player }}: «{{ answer }}»
+                        </label>
+                    </div>
+                {% endfor %}
+                <button type="submit" class="btn">Проголосовать</button>
+            </form>
+            <p><a href="/lobby">Вернуться в лобби</a></p>
+        </div>
+    </div>
+    <div class="toast-container" id="toast-container"></div>
+    <script>
+        // стандартный код
+    </script>
+</body>
+</html>

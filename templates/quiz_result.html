@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Результаты викторины</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="theme-switch" onclick="toggleTheme()">🌓 Тема</div>
+    <div class="container">
+        <div class="card">
+            <h2>Результаты викторины</h2>
+            <p>{{ player1 }} правильно: {{ total1 }}</p>
+            <p>{{ player2 }} правильно: {{ total2 }}</p>
+            <table style="width: 100%; border-collapse: collapse;">
+                <tr><th>Вопрос</th><th>{{ player1 }}</th><th>{{ player2 }}</th></tr>
+                {% for question, correct, ans1, cor1, ans2, cor2 in results %}
+                    <tr>
+                        <td>{{ question }}</td>
+                        <td style="color: {% if cor1 %}green{% else %}red{% endif %};">{{ ans1 }}</td>
+                        <td style="color: {% if cor2 %}green{% else %}red{% endif %};">{{ ans2 }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <a href="/lobby" class="btn">Вернуться в лобби</a>
+        </div>
+    </div>
+    <div class="toast-container" id="toast-container"></div>
+    <script>
+        // стандартный код темы и тостов
+    </script>
+</body>
+</html>

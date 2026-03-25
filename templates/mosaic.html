@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мозаика</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="theme-switch" onclick="toggleTheme()">🌓 Тема</div>
+    <div class="container">
+        <div class="card">
+            <h2>Мозаика – раунд {{ round_num }}</h2>
+            <p>Дополните фразу:</p>
+            <p><strong>{{ start_phrase }}</strong></p>
+            <form method="post">
+                <textarea name="answer" rows="3" placeholder="Ваш вариант..." required></textarea>
+                <button type="submit" class="btn">Отправить</button>
+            </form>
+            <p><a href="/lobby">Вернуться в лобби</a></p>
+        </div>
+    </div>
+    <div class="toast-container" id="toast-container"></div>
+    <script>
+        // стандартный код
+    </script>
+</body>
+</html>

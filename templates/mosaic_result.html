@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Результат раунда</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="theme-switch" onclick="toggleTheme()">🌓 Тема</div>
+    <div class="container">
+        <div class="card">
+            <h2>Раунд {{ round_num }} завершён</h2>
+            <p>Победивший вариант: <strong>{{ winner }}</strong> – «{{ answers[winner] }}»</p>
+            <p>Голоса: {% for player in votes %}{{ player }} {% endfor %}</p>
+            <a href="/lobby" class="btn">Вернуться в лобби</a>
+        </div>
+    </div>
+    <div class="toast-container" id="toast-container"></div>
+    <script>
+        // стандартный код
+    </script>
+</body>
+</html>

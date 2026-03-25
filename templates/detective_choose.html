@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Выбрать секрет</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="theme-switch" onclick="toggleTheme()">🌓 Тема</div>
+    <div class="container">
+        <div class="card">
+            <h2>Выберите секрет</h2>
+            <form method="post">
+                <p>Выберите одно из событий или напишите своё:</p>
+                <select name="secret">
+                    <option value="">-- выберите --</option>
+                    {% for s in secrets %}
+                        <option value="{{ s }}">{{ s }}</option>
+                    {% endfor %}
+                </select>
+                <br><br>
+                <input type="text" name="secret" placeholder="Или напишите свой вариант">
+                <button type="submit" class="btn">Загадать</button>
+            </form>
+            <p><a href="/lobby">Вернуться в лобби</a></p>
+        </div>
+    </div>
+    <div class="toast-container" id="toast-container"></div>
+    <script>
+        // стандартный код
+    </script>
+</body>
+</html>

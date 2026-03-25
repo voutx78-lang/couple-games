@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Викторина</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="theme-switch" onclick="toggleTheme()">🌓 Тема</div>
+    <div class="container">
+        <div class="card" style="text-align: center;">
+            <h2>Викторина</h2>
+            <p>Выберите действие:</p>
+            <div style="margin: 1rem 0;">
+                <a href="/quiz/create" class="btn">Создать вопросы</a>
+                <a href="/quiz/play" class="btn btn-outline" style="margin-left: 1rem;">Отвечать на вопросы</a>
+            </div>
+            <p><a href="/lobby">Вернуться в лобби</a></p>
+        </div>
+    </div>
+    <div class="toast-container" id="toast-container"></div>
+    <script>
+        // стандартный код
+    </script>
+</body>
+</html>

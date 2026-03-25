@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Квест – Хранитель</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="theme-switch" onclick="toggleTheme()">🌓 Тема</div>
+    <div class="container">
+        <div class="card">
+            <h2>Этап {{ step }}</h2>
+            <p>Вы видите подсказку:</p>
+            <div style="background: var(--primary); color: white; padding: 1rem; border-radius: 1rem; margin: 1rem 0;">
+                {{ prompt }}
+            </div>
+            <form method="post">
+                <button type="submit" name="ready" value="1" class="btn">Я сообщил ответ партнёру</button>
+            </form>
+            <p><a href="/lobby">Вернуться в лобби</a></p>
+        </div>
+    </div>
+    <div class="toast-container" id="toast-container"></div>
+    <script>
+        // стандартный код
+    </script>
+</body>
+</html>
